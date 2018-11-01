@@ -18,7 +18,7 @@ Group					User
 
 Table مجازی
 
-UsersGroups	-> UsersInGroups
+UserGroups	-> UsersInGroups
 
 User_Id		-> UserId
 Group_Id	-> GroupId
