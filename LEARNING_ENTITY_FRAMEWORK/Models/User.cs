@@ -8,6 +8,17 @@
 		{
 			public Configuration() : base()
 			{
+				//HasMany(current => current.Groups)
+				//	.WithMany(other => other.Users)
+				//	.Map(current =>
+				//	{
+				//		current.ToTable(tableName: "UsersInGroups");
+
+				//		// MapRightKey را می نويسيم و بعد MapLeftKey اول
+				//		// و سپس قانون دور در دور و نزديک در نزديک را رعايت می کنيم
+				//		current.MapLeftKey("UserId");
+				//		current.MapRightKey("GroupId");
+				//	});
 			}
 		}
 		#endregion /Configuration

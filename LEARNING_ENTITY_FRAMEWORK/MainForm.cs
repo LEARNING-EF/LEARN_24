@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Data.Entity;
 
 namespace LEARNING_ENTITY_FRAMEWORK
 {
@@ -25,36 +24,51 @@ namespace LEARNING_ENTITY_FRAMEWORK
 					new Models.DatabaseContext();
 
 				// **************************************************
-				Models.Group group1 = new Models.Group();
-				group1.Name = "Group 1";
+				Models.Group group1 =
+					new Models.Group
+					{
+						Name = "Group 1",
+					};
 
 				databaseContext.Groups.Add(group1);
 				// **************************************************
 
 				// **************************************************
-				Models.Group group2 = new Models.Group();
-				group2.Name = "Group 2";
+				Models.Group group2 =
+					new Models.Group
+					{
+						Name = "Group 2",
+					};
 
 				databaseContext.Groups.Add(group2);
 				// **************************************************
 
 				// **************************************************
-				Models.Group group3 = new Models.Group();
-				group3.Name = "Group 3";
+				Models.Group group3 =
+					new Models.Group
+					{
+						Name = "Group 3",
+					};
 
 				databaseContext.Groups.Add(group3);
 				// **************************************************
 
 				// **************************************************
-				Models.User user1 = new Models.User();
-				user1.Name = "User 1";
+				Models.User user1 =
+					new Models.User
+					{
+						Name = "User 1",
+					};
 
 				databaseContext.Users.Add(user1);
 				// **************************************************
 
 				// **************************************************
-				Models.User user2 = new Models.User();
-				user2.Name = "User 2";
+				Models.User user2 =
+					new Models.User
+					{
+						Name = "User 2",
+					};
 
 				databaseContext.Users.Add(user2);
 				// **************************************************
@@ -70,7 +84,7 @@ namespace LEARNING_ENTITY_FRAMEWORK
 				if (databaseContext != null)
 				{
 					databaseContext.Dispose();
-					databaseContext = null;
+					//databaseContext = null;
 				}
 			}
 		}
@@ -87,17 +101,17 @@ namespace LEARNING_ENTITY_FRAMEWORK
 				// **************************************************
 				Models.User user1 =
 					databaseContext.Users
-					.Where(current => current.Name == "User 1")
+					.Where(current => current.Name.ToLower() == "User 1".ToLower())
 					.FirstOrDefault();
 
 				Models.Group group1 =
 					databaseContext.Groups
-					.Where(current => current.Name == "Group 1")
+					.Where(current => current.Name.ToLower() == "Group 1".ToLower())
 					.FirstOrDefault();
 
 				Models.Group group2 =
 					databaseContext.Groups
-					.Where(current => current.Name == "Group 2")
+					.Where(current => current.Name.ToLower() == "Group 2".ToLower())
 					.FirstOrDefault();
 				// **************************************************
 
@@ -117,7 +131,7 @@ namespace LEARNING_ENTITY_FRAMEWORK
 				if (databaseContext != null)
 				{
 					databaseContext.Dispose();
-					databaseContext = null;
+					//databaseContext = null;
 				}
 			}
 		}
@@ -134,17 +148,17 @@ namespace LEARNING_ENTITY_FRAMEWORK
 				// **************************************************
 				Models.Group group3 =
 					databaseContext.Groups
-					.Where(current => current.Name == "Group 3")
+					.Where(current => current.Name.ToLower() == "Group 3".ToLower())
 					.FirstOrDefault();
 
 				Models.User user1 =
 					databaseContext.Users
-					.Where(current => current.Name == "User 1")
+					.Where(current => current.Name.ToLower() == "User 1".ToLower())
 					.FirstOrDefault();
 
 				Models.User user2 =
 					databaseContext.Users
-					.Where(current => current.Name == "User 2")
+					.Where(current => current.Name.ToLower() == "User 2".ToLower())
 					.FirstOrDefault();
 				// **************************************************
 
@@ -164,7 +178,7 @@ namespace LEARNING_ENTITY_FRAMEWORK
 				if (databaseContext != null)
 				{
 					databaseContext.Dispose();
-					databaseContext = null;
+					//databaseContext = null;
 				}
 			}
 		}
